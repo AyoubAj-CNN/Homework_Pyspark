@@ -28,18 +28,12 @@ Le projet qui traite le nettoyage de la base de données est structuré comme su
 
 ----> TP3_spark_Ayoub_Ajarra     
 
-      -----> Data 
-      
-             ----> Output
-             
+      -----> Data      
+             ----> Output  
       -----> Data Preprocessing
-      
              -----> Jobs
-             
                     ------> make_change_movies.py
-                    
                     ------> make_change_movies_genre.py
-                    
-     ------> main.py
-                  
+     ------> main.py     
+      
 '''
