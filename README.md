@@ -25,13 +25,21 @@ Les colonnes de la base de donénes `movies.csv`, contiennent plus qu'une variab
 Le projet qui traite le nettoyage de la base de données est structuré comme suit :
 
 '''
+
 ----> TP3_spark_Ayoub_Ajarra     
+
       -----> Data 
+      
              ----> Output
+             
       -----> Data Preprocessing
+      
              -----> Jobs
+             
                     ------> make_change_movies.py
+                    
                     ------> make_change_movies_genre.py
+                    
      ------> main.py
                   
 '''
