@@ -47,3 +47,7 @@ Ensuite, le dossier output contient les bases de données nettoyés et qui sont 
 ![dataset finale](genres.PNG)
 
 On remarque que les variables ont été séparée. Le même raisonnement s'applique pour séparer les genres.
+
+## Analyse de la culture humaine en se basant sur les préférences des genres de films depuis 1902:
+
+
