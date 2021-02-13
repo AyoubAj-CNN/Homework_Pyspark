@@ -37,3 +37,10 @@ Le projet qui traite le nettoyage de la base de données est structuré comme su
      ------> main.py     
       
 '''
+
+Pour séparer les variables  `Date` et  `Titre` des films on va lancer la commande `spark-submit  --py-files jobs.zip --files config.json  main.py --job make_change_movies`
+Pour séparer les genres dans la variable `genre`,  on va lancer la commande `spark-submit  --py-files jobs.zip --files config.json  main.py --job make_change_movies_genre`
+
+Après que le code finit de tourner, le dossier output contiens les bases de données nettoyés et qui sont stoquées sous l'extension `parquet`, en ouvrant ce fichier sous forme de dataframe :
+
+![dataset final](movies_cleaned.jpg)
