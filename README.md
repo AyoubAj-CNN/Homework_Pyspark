@@ -24,7 +24,7 @@ Les colonnes de la base de donénes `movies.csv`, contiennent plus qu'une variab
 
 Le projet qui traite le nettoyage de la base de données est structuré comme suit :
 
-'''
+```
 
 ----> TP3_spark_Ayoub_Ajarra     
 
@@ -36,7 +36,7 @@ Le projet qui traite le nettoyage de la base de données est structuré comme su
                     ------> make_change_movies_genre.py
      ------> main.py     
       
-'''
+```
 
 Pour séparer les variables  `Date` et  `Titre` des films on va lancer la commande `spark-submit  --py-files jobs.zip --files config.json  main.py --job make_change_movies`
 Pour séparer les genres dans la variable `genre`,  on va lancer la commande `spark-submit  --py-files jobs.zip --files config.json  main.py --job make_change_movies_genre`
