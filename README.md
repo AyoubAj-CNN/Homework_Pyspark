@@ -92,8 +92,8 @@ Dans le terminal, on lance la commande suivante `spark-submit --py-files jobs.zi
 
 Tout d'abord, on peut faire la remarque que la variable `rating` est très proche d'une gaussienne, cette hypothèse peut être généralisé à tous les phénomènes naturels ou humains. On retrouve la loi gaussienne partout dans la nature, on peut se poser la question si la loi qui décrit un comportement humain ou naturel peut être une approximation d'une loi gaussienne non centrée.
 
-![rating](picture3.PNG)
+![rating](picture3.png)
 
 Le graphe suivant permet de faire une analyse sur les genres de films qui ont apparu au cours de ces 100 dernières années, on pourra faire une analyse de séries temporelles, et ajouter des données historiques pour faire un lien de causalité ou autre avec l'histoire de l'homme au cours du dernier siècle.
 
-![genre_history](picture4.PNG)
+![genre_history](picture4.png)
