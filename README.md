@@ -10,7 +10,7 @@ df = pd.read_csv("TP3_Spark_Submit/data/movies.csv")
 ```
 
 La base de données a la forme suivante: 
-![data preprocessing](data_investigation.jpg)
+![data preprocessing](data_investigation.PNG)
 
 > **Remarque:** 
 Les colonnes de la base de donénes `movies.csv`, contiennent plus qu'une variable, on va donc les séparer dans une première partie en utilisant Spark.
@@ -43,4 +43,4 @@ Pour séparer les genres dans la variable `genre`,  on va lancer la commande `sp
 
 Après que le code finit de tourner, le dossier output contiens les bases de données nettoyés et qui sont stoquées sous l'extension `parquet`, en ouvrant ce fichier sous forme de dataframe :
 
-![dataset final](movies_cleaned.jpg)
+![dataset final](movies_cleaned.PNG)
