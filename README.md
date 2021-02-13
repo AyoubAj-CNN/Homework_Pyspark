@@ -13,14 +13,13 @@ La base de données a la forme suivante:
 ![data preprocessing](data_investigation.PNG)
 
 > **Remarque:** 
-Les colonnes de la base de donénes `movies.csv`, une colonne contient plus qu'une variable (title et date), on va donc les séparer dans une première partie en utilisant PySpark. et vu la variable MovieId est en str, on doit donc la transformer en un type entier.
+Parmi les colonnes de la base de donénes `movies.csv`, la colonne 'title' contient plus qu'une variable (title et date), on va donc les séparer dans une première partie en utilisant PySpark. Et vu que la variable MovieId est en str, on doit donc la transformer en un type entier.
 
 ## Première partie: Traitement de la base de données: 
 
 > **Movies Database:** 
->On commencera par nettoyer la base de données de , en séparant les variables dans les base de données:
 
-Le projet qui traite le nettoyage de la base de données est structuré comme suit :
+Le projet qui traite le nettoyage de la base de données est structuré suivant le shéma suivant :
 
 ```
 
@@ -35,9 +34,11 @@ Le projet qui traite le nettoyage de la base de données est structuré comme su
            ------> movies.py
            ------> movies_genre.py
            ------> rating.py
+     ------> jobs.zip
      ------> main.py     
       
 ```
+
 
 
 > Remarque: 
@@ -46,6 +47,9 @@ Pour avoir un fichier à la sortie contenant les bases de données traitées, on
 
 Le script qui s'occupe du nettoyage de la base de données `movies.csv` est `movies.py`on va lancer la commande `spark-submit  --py-files jobs.zip --files config.json  main.py --job movies` dans la même directory du projet, on obtiendra un fichier de données nettoyées dans le dossier output sous forme parquet.
 
+La Dataframe devient :
+
+![data movies](picture 1.PNG)
 
 Le même raisonnement sera fait sur la base de données  `movie_genres.csv` pour séparer les genres de films et pour transformer le type de la variable `moviedId` d'un str en un entier int, pour celà on éxécute la commande suivante sur le terminal : `spark-submit  --py-files jobs.zip --files config.json  main.py --job movies_genre`
 
@@ -53,7 +57,7 @@ Pour le nettoyage de la base de données `movie_genres.csv`, on ne fait que supp
 
 
 
-Ensuite, le dossier output contient les bases de données nettoyés et qui sont stoquées sous l'extension `parquet`.
+Tous ces fichiers sont transmis au le dossier output. Le fichier output contient donc les bases de données nettoyés et qui sont stoquées sous l'extension `parquet`.
 
 
 ## Analyse de la culture humaine en se basant sur les préférences des genres de films depuis 1902:
@@ -71,19 +75,25 @@ On crée un dossier qu'on appelera `Old_good_movies` et notre projet sera organi
                    ----> movies.parquet
                    ----> movie_genre.parquet
                    ----> ratings.parquet
-
      -----> Jobs
            ------> Dataframes_merging.py
-           ------> rating_explainability.py
-           ------> graph_genres_preferences.py
+     -----> Jobs.zip
      ------> main.py     
       
 ```
 
-.................
+On utilisera à la fin un code en `Jupyter Notebook` pour visualiser les données.
+
+Dans le terminal, on lance la commande suivante `spark-submit --py-files jobs.zip --files config.json main.py --job Dataframes_merging`, qui genère en output un fichier parquet contenant une Dataframe nettoyée, prête pour l'utilisation qui est sous la forme suivante :
+
+![data final](picture 2.PNG)
 
 > Le but de cette partie est d'étudier le développement de la culture chez l'Homme en analysant ses préférences des films.
 
-.................. # rating suit une loi gaussienne non centrée, comme plusieurs phénomènes naturels ou humains 
+Tout d'abord, on peut faire la remarque que la variable `rating` est très proche d'une gaussienne, cette hypothèse peut être généralisé à tous les phénomènes naturels ou humains. On retrouve la loi gaussienne partout dans la nature, on peut se poser la question si la loi qui décrit un comportement humain ou naturel peut être une approximation d'une loi gaussienne non centrée.
 
-........................ # Analyse des préférences, lien avec l'histoire de l'homme.
+![rating](picture 3.PNG)
+
+Le graphe suivant permet de faire une analyse sur les genres de films qui ont apparu au cours de ces 100 dernières années, on pourra faire une analyse de séries temporelles, et ajouter des données historiques pour faire un lien de causalité ou autre avec l'histoire de l'homme au cours du dernier siècle.
+
+![genre_history](picture 3.PNG)
